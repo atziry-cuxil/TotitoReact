@@ -23,7 +23,6 @@ const Juego = () => {
     }
 
     React.useEffect(() => {
-        console.log('se usa useEffect')
         const { isGanadorX, isGanadorO } = RevisarGanador()
 
         if (((isGanadorO || isGanadorX) && bloqueoInterfaz != true) || state.tablero.every(item => item != undefined)) {
@@ -43,7 +42,6 @@ const Juego = () => {
                 console.log('SE ENCONTRO UN GANADOR')
             }
             if (!isGanadorO && !isGanadorX && state.tablero.some(item => item == undefined)) {
-                console.log('Se esta cumpliendo la condicion en el modo AI vs AI')
                 marcar()
             }
         }

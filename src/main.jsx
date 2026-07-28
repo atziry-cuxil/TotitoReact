@@ -4,9 +4,9 @@ import App from './App.jsx'
 import { TotitoProvider } from './context/index.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <TotitoProvider>
       <App />
-    </TotitoProvider>  
-  </StrictMode>,
+    </TotitoProvider>   
+  // <StrictMode>
+  // </StrictMode>,
 )

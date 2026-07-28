@@ -1,9 +1,7 @@
 import { Inicio, OpcionesValidas } from "../Types/inicioType";
 
 const Reducer = (state, action) => {
-
     let nuevoArreglo;
-
     switch (action.type) {
         case Inicio.seleccionar:
             return {
