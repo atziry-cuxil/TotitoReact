@@ -3,7 +3,7 @@ import './Juego.css'
 import { TotitoContext } from '../../context';
 
 const Juego = () => {
-    const { state, MarcarHumano, RevisarGanador, TirarAI, } = React.useContext(TotitoContext)
+    const { state, MarcarHumano, RevisarGanador, TirarAI, Reiniciar } = React.useContext(TotitoContext)
 
     const [bloqueo, setBloqueo] = React.useState(false)
     const [mensaje, setMensaje] = React.useState('Empate')
@@ -38,7 +38,7 @@ const Juego = () => {
         }
 
         if (state.opcionInicio == 3) {
-            if(isGanadorO || isGanadorX) {
+            if (isGanadorO || isGanadorX) {
                 console.log('SE ENCONTRO UN GANADOR')
             }
             if (!isGanadorO && !isGanadorX && state.tablero.some(item => item == undefined)) {
@@ -67,7 +67,7 @@ const Juego = () => {
             {bloqueoInterfaz &&
                 <p className='ganadorTotito'> {mensaje} </p>}
             {
-                bloqueo && !bloqueoInterfaz  && <p className='ganadorTotito'>Pensando...</p>
+                bloqueo && !bloqueoInterfaz && <p className='ganadorTotito'>Pensando...</p>
             }
 
             <div className="board" id="board">
@@ -121,10 +121,10 @@ const Juego = () => {
             </div>
 
             <div className="actions">
-                <button className="btn btn-secondary">Volver al Menú</button>
-                <button className="btn btn-primary">Reiniciar</button>
+                {/* <button className="btn btn-secondary">Volver al Menú</button> */}
+                <button className="btn btn-primary" onClick={() => { Reiniciar(); setBloqueo(false) }}>Reiniciar</button>
             </div>
-        </div>
+        </div >
     );
 }
 

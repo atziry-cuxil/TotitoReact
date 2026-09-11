@@ -38,6 +38,10 @@ const TotitoProvider = ({ children }) => {
         return { isGanadorX, isGanadorO }
     }
 
+    const Reiniciar = () => {
+        dispatch({ type: Inicio.reiniciar })
+    }
+
     const promptSystem = `Eres el jugador O en un juego de Totito.
                             El tablero contiene 9 posiciones numeradas del 0 al 8.
                             Debes elegir únicamente una posición undefined.
@@ -64,7 +68,7 @@ const TotitoProvider = ({ children }) => {
                         4. Elegir cualquier posición disponible.
                         Responde únicamente con JSON:
                         {"posicion": numero}`
-                        
+
     const TirarAI = async (tablero, turno) => {
         try {
             const response = await client.responses.create({
@@ -97,6 +101,7 @@ const TotitoProvider = ({ children }) => {
             dispatch,
             MarcarHumano,
             RevisarGanador,
+            Reiniciar,
             TirarAI,
             //TiroAIx,
         }}>

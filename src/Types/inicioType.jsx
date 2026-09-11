@@ -2,6 +2,7 @@ const Inicio = {
     seleccionar: "SELECCIONAR", 
     continuar: 'CONTINUAR',
     marcar: "MARCAR",
+    reiniciar: "REINICIAR"
 }
 const OpcionesValidas = {
     'HH': 1,

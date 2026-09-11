@@ -18,6 +18,12 @@ const Reducer = (state, action) => {
                 tablero: [...nuevoArreglo],
                 turno: state.turno == "X" ? 'O' : 'X'
             }
+        case Inicio.reiniciar:
+            return {
+                ...state,
+                tablero: [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined],
+                turno: 'X'
+            }
         default:
             state
             break;
