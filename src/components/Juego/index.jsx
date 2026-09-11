@@ -122,7 +122,12 @@ const Juego = () => {
 
             <div className="actions">
                 {/* <button className="btn btn-secondary">Volver al Menú</button> */}
-                <button className="btn btn-primary" onClick={() => { Reiniciar(); setBloqueo(false) }}>Reiniciar</button>
+                <button className="btn btn-primary" onClick={() => {
+                    Reiniciar()
+                    setBloqueo(false)
+                    setMensaje('')
+                    setBloqueoInterfaz(false)
+                }}>Reiniciar</button>
             </div>
         </div >
     );
